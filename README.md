@@ -13,4 +13,10 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 > instead of having it all done by client-side
 > JavaScript. Pre-rendering can result in better performance and SEO.
 
-<mark> When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called hydration.)</mark>
+- When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called hydration.)
+
+> Static generation: The HTML is generated at build time and will be reused on each request.
+> Server-side Rendering: The HTML is generated on each request.
+
+- Link kullanirsan sadece gerekli yer refreshlenir ama a
+  tagi kullanirsan komple butun sayfa refreshlenir

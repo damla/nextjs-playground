@@ -39,4 +39,10 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 - Only Allowed in a Page
   getStaticProps can only be exported from a page. You can’t export it from non-page files.
 
-One of the reasons for this restriction is that React needs to have all the required data before the page is rendered.
+- One of the reasons for this restriction is that React needs to have all the required data before the page is rendered.
+
+- we’ll talk about the case where each page path depends on external data. Next.js allows you to statically generate pages with paths that depend on external data. This enables dynamic URLs in Next.js.
+
+# dynamic routing
+
+- Important: The returned list is not just an array of strings — it must be an array of objects that look like the comment above. Each object must have the params key and contain an object with the id key (because we’re using [id] in the file name). Otherwise, getStaticPaths will fail.

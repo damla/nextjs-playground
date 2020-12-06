@@ -3,7 +3,7 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 
 export async function getStaticProps({ params }) {
   // Fetch necessary data for the blog post using params.id
-  const postData = getPostData(params.id); // id ve data donduruyor
+  const postData = await getPostData(params.id); // id ve data donduruyor
   return {
     props: {
       postData,
@@ -29,6 +29,8 @@ export default function Post({ postData }) {
       {postData.id}
       <br />
       {postData.date}
+      <br />
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </Layout>
   );
 }

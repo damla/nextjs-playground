@@ -46,3 +46,8 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 # dynamic routing
 
 - Important: The returned list is not just an array of strings — it must be an array of objects that look like the comment above. Each object must have the params key and contain an object with the id key (because we’re using [id] in the file name). Otherwise, getStaticPaths will fail.
+
+- Important: We added the async keyword to getPostData because we need to use await for remark. async/await allow you to fetch data asynchronously.
+- That means we need to update getStaticProps in pages/posts/[id].js to use await when calling getPostData:
+
+-Finally, update the Post component in pages/posts/[id].js to render contentHtml using dangerouslySetInnerHTML:

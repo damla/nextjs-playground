@@ -1,6 +1,9 @@
-import Layout from "../../components/layout/layout.component";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import Head from "next/head";
 
+import Layout from "../../components/layout/layout.component";
+import Date from "../../components/date/date.component";
+
+import { getAllPostIds, getPostData } from "../../lib/posts";
 export async function getStaticProps({ params }) {
   // Fetch necessary data for the blog post using params.id
   const postData = await getPostData(params.id); // id ve data donduruyor
@@ -31,7 +34,7 @@ export default function Post({ postData }) {
       <br />
       {postData.id}
       <br />
-      {postData.date}
+      <Date dateString={postData.date} />
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </Layout>

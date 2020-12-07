@@ -51,3 +51,21 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 - That means we need to update getStaticProps in pages/posts/[id].js to use await when calling getPostData:
 
 -Finally, update the Post component in pages/posts/[id].js to render contentHtml using dangerouslySetInnerHTML:
+
+- Like getStaticProps, getStaticPaths can fetch data from any data source. In our example, getAllPostIds (which is used by getStaticPaths) may fetch from an external API endpoint:
+
+````
+export async function getAllPostIds() {
+  // Instead of the file system,
+  // fetch post data from an external API endpoint
+  const res = await fetch('..')
+  const posts = await res.json()
+  return posts.map(post => {
+    return {
+      params: {
+        id: post.id
+      }
+    }
+  })
+}```
+````
